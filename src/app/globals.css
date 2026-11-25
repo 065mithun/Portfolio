@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --card: #f8fafc;
+    --card-foreground: #0f172a;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --border: #e2e8f0;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+  }
+
+  .dark {
+    --background: #09090b;
+    --foreground: #f8fafc;
+    --card: #111827;
+    --card-foreground: #f8fafc;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --border: #27272a;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+  }
+
+  /* Color themes (can be applied to root) */
+  :root[data-color="blue"] {
+    --primary: #3b82f6;
+  }
+  :root[data-color="purple"] {
+    --primary: #a855f7;
+  }
+  :root[data-color="green"] {
+    --primary: #22c55e;
+  }
+  :root[data-color="orange"] {
+    --primary: #f97316;
+  }
+  :root[data-color="red"] {
+    --primary: #ef4444;
+  }
+  :root[data-color="teal"] {
+    --primary: #14b8a6;
+  }
+  /* Neon Colors */
+  :root[data-color="neon-pink"] {
+    --primary: #ff10f0;
+  }
+  :root[data-color="neon-cyan"] {
+    --primary: #0df0e3;
+  }
+  :root[data-color="neon-green"] {
+    --primary: #39ff14;
+  }
+  :root[data-color="neon-purple"] {
+    --primary: #b026ff;
+  }
+  :root[data-color="neon-yellow"] {
+    --primary: #ccff00;
+  }
+  :root[data-color="amber"] {
+    --primary: #f59e0b;
+  }
+  :root[data-color="rose"] {
+    --primary: #f43f5e;
+  }
+  :root[data-color="indigo"] {
+    --primary: #6366f1;
+  }
+  :root[data-color="sky"] {
+    --primary: #0ea5e9;
+  }
+
+  * {
+    border-color: var(--border);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased overflow-x-hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
